@@ -2,13 +2,6 @@ extends CharacterBody2D
 
 @onready var anin = $AnimationPlayer
 const SPEED = 200
-var movimientoInput = Vector2()
-
-func _process(delta):
-	if movimientoInput.length() >0:
-		$AnimationPlayer.play("Walk")
-	else:
-		$AnimationPlayer.play("Idle")
 
 func _physics_process(delta):
 	anin.play("Idle")

@@ -110,18 +110,17 @@ _data = {
 script = ExtResource("1_wwdnf")
 
 [node name="Idle" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_8ujgn")
 hframes = 6
 frame = 1
 
 [node name="Walk" type="Sprite2D" parent="."]
+position = Vector2(-4, 0)
 texture = ExtResource("2_wwdnf")
 hframes = 8
 frame = 1
 
 [node name="Jump" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_nj7ss")
 hframes = 12
 frame = 1
