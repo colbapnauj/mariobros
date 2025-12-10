@@ -470,3 +470,5 @@ animation = &"Hurt"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 28.5)
 shape = SubResource("RectangleShape2D_rrx65")
+
+[node name="Camera2D" type="Camera2D" parent="."]
