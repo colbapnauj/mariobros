@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://x6t1xkf6o4gu"]
 
 [ext_resource type="PackedScene" uid="uid://b8rivn1vu6l8r" path="res://ESCENAS/PISOS/piso_01.tscn" id="1_35f3x"]
-[ext_resource type="PackedScene" uid="uid://c5yw2o1ulfll8" path="res://ESCENAS/Personaje/personaje.tscn" id="2_as13n"]
+[ext_resource type="PackedScene" uid="uid://c5yw2o1ulfll8" path="res://ESCENAS/Personaje/pj_shinobi.tscn" id="2_as13n"]
 
 [node name="Nivel1" type="Node2D"]
 
@@ -9,4 +9,4 @@
 position = Vector2(0, 500)
 
 [node name="personaje" parent="." instance=ExtResource("2_as13n")]
-position = Vector2(48, 411)
+position = Vector2(46, 60)
