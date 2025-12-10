@@ -28,3 +28,4 @@ func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Player"):  
 		body.global_position = body.respawn_point
 		body.velocity = Vector2.ZERO
+		
