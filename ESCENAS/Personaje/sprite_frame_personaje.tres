@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cnb71khggwxvw"]
+
+[ext_resource type="Texture2D" uid="uid://cil3yvovgk6by" path="res://ESCENAS/Personaje/Shinobi/Idle.png" id="1_ivp5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg1l1"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toi7w"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iswva"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgglh"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuxug"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksegt"]
+atlas = ExtResource("1_ivp5l")
+region = Rect2(640, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg1l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toi7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iswva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgglh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuxug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksegt")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
