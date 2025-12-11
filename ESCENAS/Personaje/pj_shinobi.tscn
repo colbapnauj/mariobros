@@ -408,7 +408,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -465,7 +465,8 @@ script = ExtResource("1_wwdnf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s65kh")
-animation = &"Hurt"
+animation = &"Run"
+frame_progress = 0.997246
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 28.5)
