@@ -300,6 +300,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ep5lw")
 
 [node name="Principal" type="Node2D"]
+position = Vector2(1, 0)
 
 [node name="RespawnPoint" type="Node2D" parent="."]
 position = Vector2(112, 160)

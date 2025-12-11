@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var PigRun: float = 70
+@export var PigRun: float = 90
 var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
@@ -26,5 +26,12 @@ func _physics_process(delta):
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Player"):  
-		body.global_position = body.respawn_point
-		body.velocity = Vector2.ZERO
+		var difference_y = body.position.y - position.y
+		if difference_y < -30:
+			queue_free()
+			body.velocity.y = -270   
+			body.jump()
+		else:
+			# El enemigo daña al jugador → lo manda al spawn
+			body.global_position = body.respawn_point
+			body.velocity = Vector2.ZERO
