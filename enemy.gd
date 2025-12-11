@@ -29,7 +29,7 @@ func _on_Hitbox_body_entered(body):
 		var difference_y = body.position.y - position.y
 		if difference_y < -30:
 			queue_free()
-			body.velocity.y = -250   
+			body.velocity.y = -270   
 			body.jump()
 		else:
 			# El enemigo daña al jugador → lo manda al spawn
