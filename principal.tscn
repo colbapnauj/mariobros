@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bq1se7vrng3x2" path="res://Free/Terrain/Terrain (16x16).png" id="1_rrtif"]
 [ext_resource type="PackedScene" uid="uid://7x2dnqqgt1d" path="res://player.tscn" id="2_7cuts"]
 [ext_resource type="PackedScene" uid="uid://b4ki5l1wi7o3l" path="res://enemy.tscn" id="3_emcp4"]
+[ext_resource type="PackedScene" uid="uid://cuj1cw0cqkc47" path="res://ESCENAS/UI/geme_over_ui.tscn" id="4_7cuts"]
+[ext_resource type="Script" uid="uid://bnjqediihqq3o" path="res://principal.gd" id="5_principal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ep5lw"]
 texture = ExtResource("1_rrtif")
@@ -300,6 +302,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ep5lw")
 
 [node name="Principal" type="Node2D"]
+script = ExtResource("5_principal")
 
 [node name="RespawnPoint" type="Node2D" parent="."]
 position = Vector2(112, 160)
@@ -315,3 +318,5 @@ scale = Vector2(1.5, 1.5)
 [node name="Enemy" parent="." instance=ExtResource("3_emcp4")]
 position = Vector2(497, 418)
 scale = Vector2(1.5, 1.5)
+
+[node name="GameOverUI" parent="." instance=ExtResource("4_7cuts")]

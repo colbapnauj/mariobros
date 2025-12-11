@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuj1cw0cqkc47"]
+
+[ext_resource type="Script" path="res://ESCENAS/UI/geme_over_ui.gd" id="1_gameover"]
+[ext_resource type="AudioStream" uid="uid://cdvmlrr8jju3l" path="res://assets/audio/smb_mariodie.mp3" id="2_mariodie"]
+[ext_resource type="AudioStream" uid="uid://53x4qw6eby1m" path="res://assets/audio/smb_gameover.mp3" id="3_gameover"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gameover")
+
+[node name="AudioMuerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mariodie")
+
+[node name="AudioGameOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gameover")
+
+[node name="GameOverPanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.5
+offset_right = 256.5
+offset_bottom = 269.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="GameOverPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"PanelContainerVariant"
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOverPanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="GameOverPanelContainer/VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="GameOverPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOverPanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="GameOverPanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Reintentar"

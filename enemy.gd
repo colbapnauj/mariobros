@@ -26,5 +26,5 @@ func _physics_process(delta):
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Player"):  
-		body.global_position = body.respawn_point
-		body.velocity = Vector2.ZERO
+		# Usar la función ejecutar_respawn del player para que emita la señal
+		body.ejecutar_respawn()

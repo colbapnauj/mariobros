@@ -12,9 +12,16 @@ config_version=5
 
 config/name="mario"
 run/main_scene="uid://dnhskxnaqklvb"
-run/main_scene="uid://x6t1xkf6o4gu"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://dh6yqlimga788"
 
 [layer_names]
 
