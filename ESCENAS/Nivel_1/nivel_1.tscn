@@ -1,17 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://x6t1xkf6o4gu"]
+[gd_scene load_steps=9 format=3 uid="uid://x6t1xkf6o4gu"]
 
 [ext_resource type="PackedScene" uid="uid://b8rivn1vu6l8r" path="res://ESCENAS/PISOS/piso_01.tscn" id="1_35f3x"]
-[ext_resource type="Texture2D" uid="uid://dwfp76vsbq7g0" path="res://sprites/3 Objects/Other/Pointer1.png" id="1_as13n"]
+[ext_resource type="Texture2D" uid="uid://bmts3o2ms4hdd" path="res://sprites/2 Background/Night/1.png" id="1_vt88g"]
 [ext_resource type="PackedScene" uid="uid://c5yw2o1ulfll8" path="res://ESCENAS/Personaje/pj_shinobi.tscn" id="2_as13n"]
+[ext_resource type="Texture2D" uid="uid://c332qhan4maom" path="res://sprites/2 Background/Night/2.png" id="2_bv4fo"]
+[ext_resource type="Texture2D" uid="uid://b1vsyj3t5md6q" path="res://sprites/2 Background/Night/3.png" id="3_am266"]
+[ext_resource type="Texture2D" uid="uid://dcommkb7d0sxn" path="res://sprites/2 Background/Night/4.png" id="4_muf0d"]
+[ext_resource type="Texture2D" uid="uid://cab4xnk8frqsb" path="res://sprites/2 Background/Night/5.png" id="5_o61x3"]
+[ext_resource type="Texture2D" uid="uid://cvkf6i0vt75vs" path="res://sprites/3 Objects/Trees/1.png" id="6_bv4fo"]
 
 [node name="Nivel1" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(126, 515)
-texture = ExtResource("1_as13n")
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-1, 80)
+
+[node name="1" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(500, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/1"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_vt88g")
+
+[node name="2" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(500, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/2"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_bv4fo")
+
+[node name="3" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(500, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/3"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_am266")
+
+[node name="4" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(500, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/4"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_muf0d")
+
+[node name="5" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(500, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/5"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_o61x3")
+
+[node name="Ambientacion" type="Node2D" parent="."]
+
+[node name="Trees" type="Node2D" parent="Ambientacion"]
+position = Vector2(-149, 72)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ambientacion/Trees"]
+position = Vector2(-2, -6)
+texture = ExtResource("6_bv4fo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ambientacion/Trees"]
+position = Vector2(1286, -18)
+texture = ExtResource("6_bv4fo")
 
 [node name="piso_01" parent="." instance=ExtResource("1_35f3x")]
-position = Vector2(0, 500)
 
 [node name="personaje" parent="." instance=ExtResource("2_as13n")]
-position = Vector2(46, 60)
+position = Vector2(-540, -78)
