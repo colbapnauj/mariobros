@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://timer_ui_001"]
+
+[ext_resource type="Script" path="res://ESCENAS/UI/timer_ui.gd" id="1_timer"]
+[ext_resource type="AudioStream" path="res://assets/audio/ringtones-super-mario-bros.mp3" id="2_audio_inicio"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_timer")
+
+[node name="AudioInicio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_audio_inicio")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 2
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="TituloLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Tiempo para completar el nivel"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "300"
+horizontal_alignment = 2
+vertical_alignment = 1
+
