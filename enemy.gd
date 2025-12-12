@@ -25,13 +25,13 @@ func _physics_process(delta):
 
 
 func _on_Hitbox_body_entered(body):
-	if body.is_in_group("Player"):  
-		var difference_y = body.position.y - position.y
-		if difference_y < -30:
-			queue_free()
-			body.velocity.y = -270   
-			body.jump()
-		else:
-			# El enemigo daña al jugador → lo manda al spawn
-			body.global_position = body.respawn_point
-			body.velocity = Vector2.ZERO
+	if body.is_in_group("Player"): 
+		body.global_position = body.respawn_point
+		body.velocity = Vector2.ZERO
+
+
+func _on_stomp_hitbox_body_entered(body):
+	if body.is_in_group("player"):
+		queue_free() # Destruye el nodo del enemigo
+		body.velocity.y = -270 # Hace que el jugador rebote
+		body.jump() # Replace with function body.

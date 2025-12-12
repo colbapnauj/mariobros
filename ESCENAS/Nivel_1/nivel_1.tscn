@@ -81,14 +81,15 @@ texture = ExtResource("7_o61x3")
 
 [node name="piso_01" parent="." instance=ExtResource("1_35f3x")]
 
-[node name="pj_shinobi" parent="." instance=ExtResource("2_as13n")]
-position = Vector2(-571, -102)
-
 [node name="RespawnPoint" type="Node2D" parent="."]
-position = Vector2(-567, -75)
-
-[node name="Enemy" parent="." instance=ExtResource("9_am266")]
-position = Vector2(2199, 55)
+position = Vector2(-529, -109)
 
 [node name="pj_samurai" parent="." instance=ExtResource("10_muf0d")]
 position = Vector2(4474, -122)
+
+[node name="Enemy" parent="." instance=ExtResource("9_am266")]
+position = Vector2(2195, 54)
+scale = Vector2(1.5, 1.5)
+
+[node name="pj_shinobi" parent="." instance=ExtResource("2_as13n")]
+position = Vector2(1803, -131)
