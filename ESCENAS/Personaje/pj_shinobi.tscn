@@ -1,7 +1,8 @@
-[gd_scene load_steps=71 format=3 uid="uid://c5yw2o1ulfll8"]
+[gd_scene load_steps=72 format=3 uid="uid://c5yw2o1ulfll8"]
 
 [ext_resource type="Texture2D" uid="uid://cil3yvovgk6by" path="res://ESCENAS/Personaje/Shinobi/Idle.png" id="1_8ujgn"]
 [ext_resource type="Script" uid="uid://lvc8gxu48hhk" path="res://ESCENAS/Personaje/pj_shinobi.gd" id="1_wwdnf"]
+[ext_resource type="AudioStream" path="res://assets/audio/smb_jump-small.mp3" id="13_jump"]
 [ext_resource type="Texture2D" uid="uid://c6jcvr6aew107" path="res://ESCENAS/Personaje/Shinobi/Attack_1.png" id="2_o50ah"]
 [ext_resource type="Texture2D" uid="uid://dbqr2g55mtvvg" path="res://ESCENAS/Personaje/Shinobi/Walk.png" id="2_wwdnf"]
 [ext_resource type="Texture2D" uid="uid://g30sjfomxiaq" path="res://ESCENAS/Personaje/Shinobi/Jump.png" id="3_nj7ss"]
@@ -475,3 +476,6 @@ shape = SubResource("CapsuleShape2D_dats0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("12_dats0")
+
+[node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_jump")

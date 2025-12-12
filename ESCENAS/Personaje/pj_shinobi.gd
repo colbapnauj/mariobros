@@ -8,6 +8,7 @@ var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var respawn_point = get_parent().get_node("RespawnPoint").global_position
+@onready var audio_jump = $AudioJump
 
 var movimiento_bloqueado: bool = false
 
@@ -40,6 +41,9 @@ func _physics_process(delta):
 	# Saltar
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -fuerza_salto
+		# Reproducir sonido de salto
+		if audio_jump:
+			audio_jump.play()
 		
 	var screen_rect = get_viewport().get_visible_rect()
 
