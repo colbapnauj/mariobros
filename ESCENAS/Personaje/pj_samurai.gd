@@ -9,5 +9,6 @@ func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += GRAVITY
 	anin.play("Idle")
+	anin.flip_h = 1
 	move_and_slide()
 	
