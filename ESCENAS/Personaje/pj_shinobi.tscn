@@ -458,7 +458,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrx65"]
-size = Vector2(26, 71)
+size = Vector2(17, 71)
 
 [node name="pj_shinobi" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_wwdnf")
@@ -469,7 +469,7 @@ animation = &"Run"
 frame_progress = 0.997246
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 28.5)
+position = Vector2(-14.5, 29)
 shape = SubResource("RectangleShape2D_rrx65")
 
 [node name="Camera2D" type="Camera2D" parent="."]
