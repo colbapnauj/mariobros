@@ -11,6 +11,8 @@ var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var respawn_point = get_parent().get_node("RespawnPoint").global_position
 
 var movimiento_bloqueado: bool = false
+func jump():
+	velocity.y = fuerza_salto
 
 
 func _physics_process(delta):

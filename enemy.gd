@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var PigRun: float = 70
+@export var PigRun: float = 90
 var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
