@@ -110,10 +110,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ltt"]
-size = Vector2(26, 22)
+size = Vector2(30, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
-size = Vector2(48, 30)
+size = Vector2(43, 29)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
@@ -125,13 +125,13 @@ frame = 2
 frame_progress = 0.7757744
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_e1ltt")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 2)
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_qi2p4")
 
 [node name="rayo" type="Node2D" parent="."]

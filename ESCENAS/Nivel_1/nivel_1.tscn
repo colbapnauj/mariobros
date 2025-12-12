@@ -82,13 +82,14 @@ texture = ExtResource("7_o61x3")
 [node name="piso_01" parent="." instance=ExtResource("1_35f3x")]
 
 [node name="personaje" parent="." instance=ExtResource("2_as13n")]
-position = Vector2(-548, -64)
+position = Vector2(-540, -78)
+<<<<<<< HEAD
 
 [node name="RespawnPoint" type="Node2D" parent="."]
 position = Vector2(-540, -116)
 
 [node name="Enemy" parent="." instance=ExtResource("9_am266")]
 position = Vector2(2199, 55)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("10_muf0d")]
-position = Vector2(4474, -122)
+scale = Vector2(1.5, 1.5)
+=======
+>>>>>>> 826031fda33b4241538284045c7f4b501309da10

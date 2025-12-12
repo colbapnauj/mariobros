@@ -458,8 +458,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bb8bv"]
-height = 60.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrx65"]
+size = Vector2(17, 71)
 
 [node name="pj_shinobi" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_wwdnf")
@@ -470,8 +470,8 @@ animation = &"Idle"
 frame_progress = 0.003204634
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 34)
-shape = SubResource("CapsuleShape2D_bb8bv")
+position = Vector2(-14.5, 29)
+shape = SubResource("RectangleShape2D_rrx65")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("12_dats0")
