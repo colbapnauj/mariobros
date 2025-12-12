@@ -86,3 +86,6 @@ position = Vector2(-540, -116)
 [node name="Enemy" parent="." instance=ExtResource("9_am266")]
 position = Vector2(2199, 55)
 scale = Vector2(1.5, 1.5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_muf0d")]
+position = Vector2(4474, -122)
