@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://c5yw2o1ulfll8"]
+[gd_scene load_steps=71 format=3 uid="uid://c5yw2o1ulfll8"]
 
 [ext_resource type="Texture2D" uid="uid://cil3yvovgk6by" path="res://ESCENAS/Personaje/Shinobi/Idle.png" id="1_8ujgn"]
 [ext_resource type="Script" uid="uid://lvc8gxu48hhk" path="res://ESCENAS/Personaje/pj_shinobi.gd" id="1_wwdnf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ch11uo1xdikxr" path="res://ESCENAS/Personaje/Shinobi/Hurt.png" id="6_pikd1"]
 [ext_resource type="Texture2D" uid="uid://dghphedsn66bv" path="res://ESCENAS/Personaje/Shinobi/Run.png" id="9_ii0a8"]
 [ext_resource type="Texture2D" uid="uid://b0j1he6000816" path="res://ESCENAS/Personaje/Shinobi/Shield.png" id="10_1t7id"]
+[ext_resource type="Script" uid="uid://3xnvdh4la10b" path="res://ESCENAS/Personaje/camera_2d.gd" id="12_dats0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbup2"]
 atlas = ExtResource("2_o50ah")
@@ -457,19 +458,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrx65"]
-size = Vector2(26, 71)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bb8bv"]
+height = 60.0
 
 [node name="pj_shinobi" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_wwdnf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s65kh")
-animation = &"Run"
-frame_progress = 0.997246
+animation = &"Idle"
+frame_progress = 0.003204634
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 28.5)
-shape = SubResource("RectangleShape2D_rrx65")
+position = Vector2(-5, 34)
+shape = SubResource("CapsuleShape2D_bb8bv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("12_dats0")
