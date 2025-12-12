@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://x6t1xkf6o4gu"]
+[gd_scene load_steps=10 format=3 uid="uid://x6t1xkf6o4gu"]
 
 [ext_resource type="PackedScene" uid="uid://b8rivn1vu6l8r" path="res://ESCENAS/PISOS/piso_01.tscn" id="1_35f3x"]
 [ext_resource type="Texture2D" uid="uid://bmts3o2ms4hdd" path="res://sprites/2 Background/Night/1.png" id="1_vt88g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dcommkb7d0sxn" path="res://sprites/2 Background/Night/4.png" id="4_muf0d"]
 [ext_resource type="Texture2D" uid="uid://cab4xnk8frqsb" path="res://sprites/2 Background/Night/5.png" id="5_o61x3"]
 [ext_resource type="Texture2D" uid="uid://cvkf6i0vt75vs" path="res://sprites/3 Objects/Trees/1.png" id="6_bv4fo"]
+[ext_resource type="PackedScene" uid="uid://5rglpkttx1ev" path="res://ESCENAS/Personaje/pj_samurai.tscn" id="9_am266"]
 
 [node name="Nivel1" type="Node2D"]
 
@@ -68,10 +69,13 @@ position = Vector2(-2, -6)
 texture = ExtResource("6_bv4fo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ambientacion/Trees"]
-position = Vector2(1286, -18)
+position = Vector2(2180, -63)
 texture = ExtResource("6_bv4fo")
 
 [node name="piso_01" parent="." instance=ExtResource("1_35f3x")]
 
 [node name="personaje" parent="." instance=ExtResource("2_as13n")]
 position = Vector2(-540, -78)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_am266")]
+position = Vector2(4432, -121)
