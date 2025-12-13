@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://timer_ui_001"]
+[gd_scene load_steps=4 format=3 uid="uid://c14n13jlqmviq"]
 
-[ext_resource type="Script" path="res://ESCENAS/UI/timer_ui.gd" id="1_timer"]
-[ext_resource type="AudioStream" path="res://assets/audio/ringtones-super-mario-bros.mp3" id="2_audio_inicio"]
+[ext_resource type="Script" uid="uid://yp6vpji81ksn" path="res://ESCENAS/UI/timer_ui.gd" id="1_timer"]
+[ext_resource type="AudioStream" uid="uid://c4nvg15eka6ta" path="res://assets/audio/ringtones-super-mario-bros.mp3" id="2_audio_inicio"]
+[ext_resource type="Theme" uid="uid://c5qvgfjdmv0tl" path="res://resources/indicadores_theme.tres" id="3_3idvx"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_timer")
@@ -10,30 +11,31 @@ script = ExtResource("1_timer")
 stream = ExtResource("2_audio_inicio")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 2
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 offset_left = -200.0
 offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 100.0
 grow_horizontal = 0
 grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("3_3idvx")
 theme_override_constants/separation = 5
 
 [node name="TituloLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-text = "Tiempo para completar el nivel"
-horizontal_alignment = 2
+text = "TIME"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 24
 text = "300"
-horizontal_alignment = 2
+horizontal_alignment = 1
 vertical_alignment = 1
-

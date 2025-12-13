@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c5qvgfjdmv0tl"]
+
+[ext_resource type="FontFile" uid="uid://7776jr478ocj" path="res://assets/SuperMario256.ttf" id="1_mgfbg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr8ig"]
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mlgg"]
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mi1mp"]
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_mgfbg")
+Button/styles/normal = SubResource("StyleBoxTexture_rr8ig")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/colors/font_color = Color(0.9137255, 0.37254903, 0.13333334, 1)
+HeaderLarge/colors/font_outline_color = Color(1, 1, 1, 1)
+HeaderLarge/constants/outline_size = 25
+HeaderLarge/font_sizes/font_size = 70
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_mgfbg")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_6mlgg")
+PanelContainerVariant/base_type = &"PanelContainer"
+PanelContainerVariant/styles/panel = SubResource("StyleBoxTexture_mi1mp")

@@ -2,8 +2,8 @@ extends CanvasLayer
 
 signal tiempo_agotado
 
-@export var tiempo_inicial: float = 300.0  # 300 segundos
-var tiempo_restante: float = 300.0
+@export var tiempo_inicial: float = 45.0
+var tiempo_restante: float = 45.0
 var timer_activo: bool = false
 var velocidad_aumentada: bool = false
 
@@ -71,4 +71,3 @@ func reiniciar_timer():
 	# Reproducir audio al reiniciar (se repetirá en bucle automáticamente)
 	if audio_inicio:
 		audio_inicio.play()
-

@@ -8,7 +8,6 @@ var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var respawn_point = get_parent().get_node("RespawnPoint").global_position
-@onready var audio_jump = $AudioJump
 
 var movimiento_bloqueado: bool = false
 var is_remote_player: bool = false  # Si es true, se controla por WebSocket
@@ -18,7 +17,6 @@ var remote_input: Dictionary = {"left": false, "right": false, "jump": false}
 
 func jump():
 	velocity.y = fuerza_salto
-
 
 func _physics_process(delta):
 	# Si es un jugador remoto, usar datos del servidor
@@ -54,16 +52,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravedad * delta
 
-	# Movimiento horizontal
-	var input_dir := Input.get_axis("ui_left", "ui_right")
+	# Movimiento horizontal - usar teclas alternativas para player 2
+	var input_dir := Input.get_axis("move_left_p2", "move_right_p2")
 	velocity.x = input_dir * velocidad
 
-	# Saltar
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# Saltar - tecla alternativa para player 2
+	if Input.is_action_just_pressed("jump_p2") and is_on_floor():
 		velocity.y = -fuerza_salto
-		# Reproducir sonido de salto
-		if audio_jump:
-			audio_jump.play()
 		
 	var screen_rect = get_viewport().get_visible_rect()
 
@@ -91,19 +86,16 @@ func desbloquear_movimiento():
 	"""Desbloquea el movimiento del jugador"""
 	movimiento_bloqueado = false
 
-func update_animation(input_dir):
-	if !is_on_floor():
-		if velocity.y < 0:
-			anim.play("Jump")
-		else:
-			anim.play("Hurt")
-		return
-
-	if input_dir == 0:
-		anim.play("Idle")
-	else:
-		anim.play("Run")
+func update_animation(input_dir: float):
+	if input_dir != 0:
 		anim.flip_h = input_dir < 0
+
+	if not is_on_floor():
+		anim.play("jump")
+	elif input_dir == 0:
+		anim.play("idle")
+	else:
+		anim.play("run")
 
 func set_remote_data(pos: Vector2, vel: Vector2, input_data: Dictionary):
 	"""Actualiza la posición y velocidad del jugador remoto"""

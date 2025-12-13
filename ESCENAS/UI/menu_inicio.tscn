@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8x2dnqqgt1e3"]
+
+[ext_resource type="Script" uid="uid://d1rld5ylgmmam" path="res://ESCENAS/UI/menu_inicio.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://c3fyxpc8yr6dh" path="res://assets/NES - Super Mario Bros. - Miscellaneous - Title Screen, HUD and Miscellaneous.png" id="2_titulo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton"]
+bg_color = Color(0.2, 0.6, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1, 0.4, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_hover"]
+bg_color = Color(0.3, 0.7, 0.3, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.5, 0.2, 1)
+
+[node name="MenuInicio" type="CanvasLayer"]
+script = ExtResource("1_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloSprite" type="TextureRect" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_titulo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "SUPER MARIO BROS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Boton1Player" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_hover")
+text = "1 Jugador"
+
+[node name="BotonOnline" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_hover")
+text = "Online (2P)"

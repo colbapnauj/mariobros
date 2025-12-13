@@ -11,11 +11,30 @@ var gravedad: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var respawn_point = get_parent().get_node("RespawnPoint").global_position
 
 var movimiento_bloqueado: bool = false
+var is_remote_player: bool = false  # Si es true, se controla por WebSocket
+var remote_position: Vector2 = Vector2.ZERO
+var remote_velocity: Vector2 = Vector2.ZERO
 func jump():
 	velocity.y = fuerza_salto
 
 
 func _physics_process(delta):
+	# Si es un jugador remoto, usar datos del servidor
+	if is_remote_player:
+		# Interpolación suave hacia la posición remota
+		global_position = global_position.lerp(remote_position, 0.3)
+		velocity = remote_velocity
+		
+		# Actualizar animación basada en velocidad remota
+		var input_dir = 0.0
+		if remote_velocity.x > 0:
+			input_dir = 1.0
+		elif remote_velocity.x < 0:
+			input_dir = -1.0
+		update_animation(input_dir)
+		move_and_slide()
+		return
+	
 	# Si el movimiento está bloqueado, solo aplicar gravedad mínima y no procesar input
 	if movimiento_bloqueado:
 		# Aplicar gravedad mínima para mantener al personaje en el suelo
@@ -80,3 +99,8 @@ func update_animation(input_dir: float):
 		anim.play("idle")
 	else:
 		anim.play("run")
+
+func set_remote_data(pos: Vector2, vel: Vector2, input_data: Dictionary):
+	"""Actualiza la posición y velocidad del jugador remoto"""
+	remote_position = pos
+	remote_velocity = vel

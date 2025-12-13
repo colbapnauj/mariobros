@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x6t1xkf6o4gu"]
+[gd_scene load_steps=17 format=3 uid="uid://x6t1xkf6o4gu"]
 
 [ext_resource type="PackedScene" uid="uid://b8rivn1vu6l8r" path="res://ESCENAS/PISOS/piso_01.tscn" id="1_35f3x"]
 [ext_resource type="Texture2D" uid="uid://bmts3o2ms4hdd" path="res://sprites/2 Background/Night/1.png" id="1_vt88g"]
@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://b4ki5l1wi7o3l" path="res://enemy.tscn" id="9_am266"]
 [ext_resource type="PackedScene" uid="uid://5rglpkttx1ev" path="res://ESCENAS/Personaje/pj_samurai.tscn" id="10_muf0d"]
 [ext_resource type="PackedScene" uid="uid://cuj1cw0cqkc47" path="res://ESCENAS/UI/geme_over_ui.tscn" id="11_gameover"]
-[ext_resource type="PackedScene" path="res://ESCENAS/UI/timer_ui.tscn" id="13_timer"]
-[ext_resource type="Script" path="res://ESCENAS/Nivel_1/nivel_1.gd" id="12_nivel1"]
+[ext_resource type="Script" uid="uid://t03sbrl1ru3v" path="res://ESCENAS/Nivel_1/nivel_1.gd" id="12_nivel1"]
+[ext_resource type="PackedScene" uid="uid://c14n13jlqmviq" path="res://ESCENAS/UI/timer_ui.tscn" id="13_timer"]
+[ext_resource type="PackedScene" uid="uid://b8x2dnqqgt1e2" path="res://player2.tscn" id="14_player2"]
+[ext_resource type="PackedScene" uid="uid://ej6rlthvm5nd" path="res://ESCENAS/UI/win_ui.tscn" id="15_win"]
 
 [node name="Nivel1" type="Node2D"]
 script = ExtResource("12_nivel1")
@@ -92,11 +94,17 @@ position = Vector2(-529, -109)
 position = Vector2(4474, -122)
 
 [node name="GameOverUI" parent="." instance=ExtResource("11_gameover")]
+
 [node name="Enemy" parent="." instance=ExtResource("9_am266")]
 position = Vector2(2195, 54)
 scale = Vector2(1.5, 1.5)
 
 [node name="pj_shinobi" parent="." instance=ExtResource("2_as13n")]
-position = Vector2(1803, -131)
+position = Vector2(-540, -88)
+
+[node name="Player2" parent="." instance=ExtResource("14_player2")]
+position = Vector2(1903, -131)
 
 [node name="TimerUI" parent="." instance=ExtResource("13_timer")]
+
+[node name="WinUI" parent="." instance=ExtResource("15_win")]

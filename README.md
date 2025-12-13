@@ -1,6 +1,6 @@
-# Mario Game - Sistema de Game Over y Respawn
+# Mario Game - Sistema de Game Over, Respawn y Multiplayer
 
-Este documento describe el flujo completo del sistema de game over y respawn implementado en el juego.
+Este documento describe el flujo completo del sistema de game over, respawn y multiplayer implementado en el juego.
 
 ## 📋 Descripción General
 
@@ -236,12 +236,45 @@ INICIO DEL JUEGO
     └──────────────────┘
 ```
 
+## 🎮 Sistema Multiplayer
+
+El juego ahora soporta tres modos de juego:
+
+### 1. Un Jugador
+- Solo el jugador principal está activo
+- Controles: Flechas izquierda/derecha y Espacio/Enter para saltar
+
+### 2. Dos Jugadores Locales
+- Ambos jugadores juegan en la misma máquina
+- Player 1: Flechas izquierda/derecha y Espacio/Enter
+- Player 2: A/D para moverse y W para saltar
+
+### 3. Online (2 Jugadores)
+- Dos jugadores se conectan a través de un servidor WebSocket
+- Requiere que el servidor esté ejecutándose (ver `server/README.md`)
+- El primer jugador que se conecta es el host
+- El segundo jugador se conecta como cliente remoto
+
+### Servidor WebSocket
+
+Para jugar en modo online, necesitas iniciar el servidor:
+
+```bash
+cd server
+npm install
+npm start
+```
+
+El servidor se ejecutará en `ws://localhost:8080` por defecto.
+
 ## 📝 Notas Técnicas
 
 - El sistema usa señales de Godot para comunicación entre nodos
 - El bloqueo de movimiento se implementa mediante una variable booleana `movimiento_bloqueado`
 - La UI se oculta por defecto al inicio del juego
 - El respawn siempre reposiciona al jugador en el `RespawnPoint` y resetea su velocidad
+- El sistema multiplayer usa WebSockets para sincronización en tiempo real
+- El jugador remoto se actualiza mediante interpolación suave para una mejor experiencia
 
 ## 🐛 Solución de Problemas
 

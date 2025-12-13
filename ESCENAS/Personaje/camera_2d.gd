@@ -11,7 +11,8 @@ var personaje: CharacterBody2D
 func _ready():
 	personaje = get_parent() as CharacterBody2D
 	_aplicar_limites()
-	make_current()
+	# No hacer make_current() aquí, se hará desde nivel_1.gd según el modo de juego
+	# make_current() se llamará solo si este jugador es el activo
 	
 	global_position = personaje.global_position
 	

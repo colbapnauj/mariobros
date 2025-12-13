@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://ej6rlthvm5nd"]
+
+[ext_resource type="Script" path="res://ESCENAS/UI/win_ui.gd" id="1_win"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.1, 0.1, 0.2, 0.9)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.5, 0.5, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton"]
+bg_color = Color(0.2, 0.6, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1, 0.4, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boton_hover"]
+bg_color = Color(0.3, 0.7, 0.3, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.5, 0.2, 1)
+
+[node name="WinUI" type="CanvasLayer"]
+script = ExtResource("1_win")
+
+[node name="WinPanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinPanelContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloLabel" type="Label" parent="WinPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "¡VICTORIA!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MensajeLabel" type="Label" parent="WinPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "¡Felicidades! Has completado el nivel!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolverButton" type="Button" parent="WinPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Volver al Menú"
+theme_override_styles/normal = SubResource("StyleBoxFlat_boton")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boton_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boton_hover")
+

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuj1cw0cqkc47"]
 
-[ext_resource type="Script" path="res://ESCENAS/UI/geme_over_ui.gd" id="1_gameover"]
+[ext_resource type="Script" uid="uid://bdsw02ya6bohs" path="res://ESCENAS/UI/geme_over_ui.gd" id="1_gameover"]
 [ext_resource type="AudioStream" uid="uid://cdvmlrr8jju3l" path="res://assets/audio/smb_mariodie.mp3" id="2_mariodie"]
 [ext_resource type="AudioStream" uid="uid://53x4qw6eby1m" path="res://assets/audio/smb_gameover.mp3" id="3_gameover"]
 
